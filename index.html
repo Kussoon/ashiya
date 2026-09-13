@@ -1,1 +1,262 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eef8f5"><title>芦屋市 町名記憶ゲーム</title><style>*{box-sizing:border-box}html,body{margin:0;background:#eef8f5;color:#294048;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",Meiryo,sans-serif}body{display:flex;justify-content:center}.wrap{width:min(100%,640px);min-height:100dvh;padding:max(16px,env(safe-area-inset-top)) 14px max(20px,env(safe-area-inset-bottom));background:linear-gradient(#edf9f6,#fff)}header{text-align:center}h1{font-size:clamp(27px,7vw,38px);line-height:1.2;color:#175e62;margin:6px 0}.tagline{color:#53696b;font-weight:800;margin:0}.character{font-size:66px;line-height:1.3;margin:8px auto 12px}.menu{display:grid;gap:15px}.section{display:grid;gap:8px}.section-head{font-size:14px;font-weight:900;color:#337075;margin-left:3px}.badge{display:inline-block;border-radius:999px;padding:4px 9px;background:#eef0f0;color:#657475;font-size:11px;margin-right:5px}.grid{display:grid;gap:9px}.card{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:10px;min-height:75px;padding:10px 12px;border:1px solid #c7dfd8;border-radius:16px;background:#f8faf9;color:#31535a;text-align:left;font:inherit;width:100%;opacity:.78}.icon{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e4f4ef;font-size:27px}.text strong{display:block;font-size:17px;color:#195b61;line-height:1.35}.text small{display:block;color:#667c7f;font-size:12px;font-weight:650;line-height:1.45;margin-top:3px}.soon{display:inline-block;border-radius:999px;padding:5px 9px;background:#eef0f0;color:#657475;white-space:nowrap;font-size:11px;font-weight:900}.note{margin:18px 2px 0;padding:11px;background:#f0f6f4;color:#607576;border-radius:12px;line-height:1.55;text-align:center;font-size:12px}footer{text-align:center;font-size:11px;color:#7d8b8c;margin:17px 0 5px}@media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}.grid.two .card{grid-template-columns:40px 1fr auto}.grid.two .icon{width:40px;height:40px;font-size:23px}.grid.two .text strong{font-size:15px}}</style></head><body><main class="wrap"><header><h1>芦屋市 町名記憶ゲーム</h1><p class="tagline">芦屋市の町を、地図で楽しく覚えよう！</p><div class="character" aria-label="案内役のフクロウ">🦉</div></header><nav class="menu"><section class="section"><div class="section-head"><span class="badge">作成中</span>まずは地図で確認</div><button class="card" disabled><span class="icon">🗺️</span><span class="text"><strong>町名入り全域図</strong><small>芦屋市全域の町名を確認</small></span><span class="soon">作成中</span></button></section><section class="section"><div class="section-head">通常モード｜地域から覚える</div><div class="grid"><button class="card" disabled><span class="icon">🧭</span><span class="text"><strong>地域の場所を覚える</strong><small>地域の名前と大まかな位置を確認</small></span><span class="soon">作成中</span></button><button class="card" disabled><span class="icon">🏠</span><span class="text"><strong>地域ごとに町名を覚える</strong><small>地域を選んで町名を学習</small></span><span class="soon">作成中</span></button></div></section><section class="section"><div class="section-head">通常モード｜全域クイズ</div><div class="grid two"><button class="card" disabled><span class="icon">📍</span><span class="text"><strong>町名から場所を当てる</strong><small>地図上の位置を回答</small></span><span class="soon">作成中</span></button><button class="card" disabled><span class="icon">✨</span><span class="text"><strong>光った町名を当てる</strong><small>町名を選択肢から回答</small></span><span class="soon">作成中</span></button></div></section><section class="section"><div class="section-head">地図で確認｜ほかの見方</div><div class="grid two"><button class="card" disabled><span class="icon">🔍</span><span class="text"><strong>町名から場所を探す</strong><small>漢字・読み仮名から検索して位置を確認</small></span><span class="soon">作成中</span></button><button class="card" disabled><span class="icon">🛣️</span><span class="text"><strong>交通入り全域図</strong><small>鉄道や主な道路も確認</small></span><span class="soon">作成中</span></button></div></section></nav><p class="note">芦屋市版は、町名入り全域図から順に作成します。</p><footer>Ver. 0.1.0（準備版）<br>© KUSSOON 2026 All Rights Reserved.</footer></main></body></html>
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#eef8f5" />
+    <title>芦屋市 町名記憶ゲーム</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        background: #eef8f5;
+        color: #294048;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .wrap {
+        width: min(100%, 640px);
+        min-height: 100dvh;
+        padding: max(16px, env(safe-area-inset-top)) 14px
+          max(20px, env(safe-area-inset-bottom));
+        background: linear-gradient(#edf9f6, #fff);
+      }
+      header {
+        text-align: center;
+      }
+      h1 {
+        font-size: clamp(27px, 7vw, 38px);
+        line-height: 1.2;
+        color: #175e62;
+        margin: 6px 0;
+      }
+      .tagline {
+        color: #53696b;
+        font-weight: 800;
+        margin: 0;
+      }
+      .character {
+        font-size: 66px;
+        line-height: 1.3;
+        margin: 8px auto 12px;
+      }
+      .menu {
+        display: grid;
+        gap: 15px;
+      }
+      .section {
+        display: grid;
+        gap: 8px;
+      }
+      .section-head {
+        font-size: 14px;
+        font-weight: 900;
+        color: #337075;
+        margin-left: 3px;
+      }
+      .badge {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 4px 9px;
+        background: #dff3eb;
+        color: #277066;
+        font-size: 11px;
+        margin-right: 5px;
+      }
+      .grid {
+        display: grid;
+        gap: 9px;
+      }
+      .card {
+        display: grid;
+        grid-template-columns: 48px 1fr auto;
+        align-items: center;
+        gap: 10px;
+        min-height: 75px;
+        padding: 10px 12px;
+        border: 1px solid #c7dfd8;
+        border-radius: 16px;
+        background: #f8faf9;
+        color: #31535a;
+        text-align: left;
+        font: inherit;
+        width: 100%;
+        opacity: 0.78;
+      }
+      .card.feature {
+        opacity: 1;
+        text-decoration: none;
+        cursor: pointer;
+        border-color: #88bbb0;
+        box-shadow: 0 2px 9px #28665d18;
+      }
+      .card.feature:hover,
+      .card.feature:focus-visible {
+        background: #f0faf7;
+        outline: 3px solid #bfe3d8;
+        outline-offset: 2px;
+      }
+      .arrow {
+        font-size: 25px;
+        color: #277066;
+        font-weight: 700;
+      }
+      .icon {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 13px;
+        background: #e4f4ef;
+        font-size: 27px;
+      }
+      .text strong {
+        display: block;
+        font-size: 17px;
+        color: #195b61;
+        line-height: 1.35;
+      }
+      .text small {
+        display: block;
+        color: #667c7f;
+        font-size: 12px;
+        font-weight: 650;
+        line-height: 1.45;
+        margin-top: 3px;
+      }
+      .soon {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 5px 9px;
+        background: #eef0f0;
+        color: #657475;
+        white-space: nowrap;
+        font-size: 11px;
+        font-weight: 900;
+      }
+      .note {
+        margin: 18px 2px 0;
+        padding: 11px;
+        background: #f0f6f4;
+        color: #607576;
+        border-radius: 12px;
+        line-height: 1.55;
+        text-align: center;
+        font-size: 12px;
+      }
+      footer {
+        text-align: center;
+        font-size: 11px;
+        color: #7d8b8c;
+        margin: 17px 0 5px;
+      }
+      @media (min-width: 560px) {
+        .grid.two {
+          grid-template-columns: 1fr 1fr;
+        }
+        .grid.two .card {
+          grid-template-columns: 40px 1fr auto;
+        }
+        .grid.two .icon {
+          width: 40px;
+          height: 40px;
+          font-size: 23px;
+        }
+        .grid.two .text strong {
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <h1>芦屋市 町名記憶ゲーム</h1>
+        <p class="tagline">芦屋市の町を、地図で楽しく覚えよう！</p>
+        <div class="character" aria-label="案内役のフクロウ">🦉</div>
+      </header>
+      <nav class="menu">
+        <section class="section">
+          <div class="section-head">
+            <span class="badge">公開中</span>まずは地図で確認
+          </div>
+          <a class="card feature" href="all-area-labeled.html">
+            <span class="icon">🗺️</span
+            ><span class="text"
+              ><strong>町名入り全域図</strong
+              ><small>芦屋市全域の町名を確認</small></span
+            ><span class="arrow" aria-hidden="true">›</span>
+          </a>
+        </section>
+        <section class="section">
+          <div class="section-head">通常モード｜地域から覚える</div>
+          <div class="grid">
+            <button class="card" disabled>
+              <span class="icon">🧭</span
+              ><span class="text"
+                ><strong>地域の場所を覚える</strong
+                ><small>地域の名前と大まかな位置を確認</small></span
+              ><span class="soon">作成中</span></button
+            ><button class="card" disabled>
+              <span class="icon">🏠</span
+              ><span class="text"
+                ><strong>地域ごとに町名を覚える</strong
+                ><small>地域を選んで町名を学習</small></span
+              ><span class="soon">作成中</span>
+            </button>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section-head">通常モード｜全域クイズ</div>
+          <div class="grid two">
+            <button class="card" disabled>
+              <span class="icon">📍</span
+              ><span class="text"
+                ><strong>町名から場所を当てる</strong
+                ><small>地図上の位置を回答</small></span
+              ><span class="soon">作成中</span></button
+            ><button class="card" disabled>
+              <span class="icon">✨</span
+              ><span class="text"
+                ><strong>光った町名を当てる</strong
+                ><small>町名を選択肢から回答</small></span
+              ><span class="soon">作成中</span>
+            </button>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section-head">地図で確認｜ほかの見方</div>
+          <div class="grid two">
+            <button class="card" disabled>
+              <span class="icon">🔍</span
+              ><span class="text"
+                ><strong>町名から場所を探す</strong
+                ><small>漢字・読み仮名から検索して位置を確認</small></span
+              ><span class="soon">作成中</span></button
+            ><button class="card" disabled>
+              <span class="icon">🛣️</span
+              ><span class="text"
+                ><strong>交通入り全域図</strong
+                ><small>鉄道や主な道路も確認</small></span
+              ><span class="soon">作成中</span>
+            </button>
+          </div>
+        </section>
+      </nav>
+      <p class="note">芦屋市版は、町名入り全域図から順に作成します。</p>
+      <footer>
+        Ver. 0.1.1（町名入り全域図）<br />© KUSSOON 2026 All Rights Reserved.
+      </footer>
+    </main>
+  </body>
+</html>
