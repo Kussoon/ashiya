@@ -7,6 +7,11 @@
       content="width=device-width,initial-scale=1,viewport-fit=cover"
     />
     <meta name="theme-color" content="#eef8f5" />
+    <meta
+      name="description"
+      content="芦屋市の59町名を、町名入り全域図と漢字・読み仮名検索で学べる無料の地理学習サイトです。"
+    />
+    <link rel="canonical" href="https://kussoon.com/ashiya/" />
     <title>芦屋市 町名記憶ゲーム</title>
     <style>
       * {
@@ -154,6 +159,24 @@
         text-align: center;
         font-size: 12px;
       }
+      .upcoming {
+        margin: 16px 2px 0;
+        color: #53696b;
+        font-size: 13px;
+        line-height: 1.65;
+        text-align: center;
+      }
+      .site-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 14px;
+        margin: 16px 4px 0;
+        font-size: 12px;
+      }
+      .site-links a {
+        color: #276c70;
+      }
       footer {
         text-align: center;
         font-size: 11px;
@@ -199,42 +222,6 @@
           </a>
         </section>
         <section class="section">
-          <div class="section-head">通常モード｜地域から覚える</div>
-          <div class="grid">
-            <button class="card" disabled>
-              <span class="icon">🧭</span
-              ><span class="text"
-                ><strong>地域の場所を覚える</strong
-                ><small>地域の名前と大まかな位置を確認</small></span
-              ><span class="soon">作成中</span></button
-            ><button class="card" disabled>
-              <span class="icon">🏠</span
-              ><span class="text"
-                ><strong>地域ごとに町名を覚える</strong
-                ><small>地域を選んで町名を学習</small></span
-              ><span class="soon">作成中</span>
-            </button>
-          </div>
-        </section>
-        <section class="section">
-          <div class="section-head">通常モード｜全域クイズ</div>
-          <div class="grid two">
-            <button class="card" disabled>
-              <span class="icon">📍</span
-              ><span class="text"
-                ><strong>町名から場所を当てる</strong
-                ><small>地図上の位置を回答</small></span
-              ><span class="soon">作成中</span></button
-            ><button class="card" disabled>
-              <span class="icon">✨</span
-              ><span class="text"
-                ><strong>光った町名を当てる</strong
-                ><small>町名を選択肢から回答</small></span
-              ><span class="soon">作成中</span>
-            </button>
-          </div>
-        </section>
-        <section class="section">
           <div class="section-head">地図で確認｜ほかの見方</div>
           <div class="grid two">
             <a class="card feature" href="town-search.html">
@@ -243,19 +230,24 @@
                 ><strong>町名から場所を探す</strong
                 ><small>漢字・読み仮名から検索して位置を確認</small></span
               ><span class="arrow" aria-hidden="true">›</span></a
-            ><button class="card" disabled>
-              <span class="icon">🛣️</span
-              ><span class="text"
-                ><strong>交通入り全域図</strong
-                ><small>鉄道や主な道路も確認</small></span
-              ><span class="soon">作成中</span>
-            </button>
+            >
           </div>
         </section>
       </nav>
-      <p class="note">芦屋市版は、町名入り全域図から順に作成します。</p>
+      <p class="upcoming">
+        クイズなどの学習機能は今後追加予定です。現在は、全域図と町名検索をご利用いただけます。
+      </p>
+      <p class="note">
+        このサイトでは芦屋市の59町名を掲載しています。全域図では、離れた区域を持つ町名も一つの町名として扱います。
+      </p>
+      <nav class="site-links" aria-label="サイト共通案内">
+        <a href="/about/">このサイトについて</a>
+        <a href="/privacy/">プライバシーポリシー</a>
+        <a href="/sources/">データ出典</a>
+        <a href="/terms/">利用上の注意</a>
+      </nav>
       <footer>
-        Ver. 0.2.0（町名検索）<br />© KUSSOON 2026 All Rights Reserved.
+        Ver. 0.3.0<br />© KUSSOON 2026 All Rights Reserved.
       </footer>
     </main>
   </body>
