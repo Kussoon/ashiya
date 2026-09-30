@@ -197,11 +197,17 @@
         }
       }
     </style>
-  </head>
+  <style id="kussoon-category-nav-style">
+.kussoon-category-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 12px;margin:0 0 16px;padding:4px 0;font-size:13px;line-height:1.5}
+.kussoon-category-nav a{display:inline-block;padding:7px 10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;color:#334155;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.kussoon-category-nav a:focus-visible{outline:3px solid #2563eb;outline-offset:3px}
+</style>
+</head>
   <body>
     <main class="wrap">
       <header>
-        <h1>芦屋市の町名を地図で覚える</h1>
+        <nav class="kussoon-category-nav" aria-label="Kussoonのカテゴリ案内"><a href="/">← Kussoonトップへ</a><a href="/games/">学ぶ・遊ぶ</a><a href="/local/">地域を調べる</a></nav>
+<h1>芦屋市の町名を地図で覚える</h1>
         <p class="tagline">芦屋市の町名・町域を地図で見て、探して、覚えよう！</p>
         <div class="character" aria-label="案内役のフクロウ">🦉</div>
       </header>
@@ -251,7 +257,7 @@
         <a href="/terms/">利用上の注意</a>
       </nav>
       <footer>
-        Ver. 0.3.1<br />© KUSSOON 2026 All Rights Reserved.
+        Ver. 0.3.2<br />© KUSSOON 2026 All Rights Reserved.
       </footer>
     </main>
   </body>
