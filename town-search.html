@@ -226,6 +226,8 @@
         font-weight: 800;
         cursor: pointer;
       }
+      .wheel-hint { display: none; margin: 6px 4px; color: #526b7d; font-size: 12px; line-height: 1.4; }
+      @media (hover:hover) and (pointer:fine) { .wheel-hint { display: block; } }
       .viewport {
         height: min(59vh, 630px);
         min-height: 390px;
@@ -332,6 +334,7 @@
         <div id="selectedName">候補から町名を選択</div>
         <div id="selectedReading"></div>
       </section>
+      <p class="wheel-hint" id="wheelHint" aria-live="polite">地図をクリックするとホイールで拡大・縮小できます</p>
       <div class="mapbox">
         <div class="tools">
           <button class="tool" id="plus" type="button" aria-label="拡大">
@@ -1122,6 +1125,15 @@
           }
         };
       }
+      let wheelMode = false, lastPointerType = "mouse";
+      document.addEventListener("pointerdown", (e) => { lastPointerType = e.pointerType || "mouse"; }, true);
+      document.addEventListener("click", (e) => {
+        if ((e.pointerType || lastPointerType) !== "mouse") return;
+        const insideMap = svg.contains(e.target);
+        if (insideMap && suppress) return;
+        wheelMode = insideMap;
+        $("#wheelHint").textContent = wheelMode ? "ホイールで拡大・縮小できます" : "地図をクリックするとホイールで拡大・縮小できます";
+      }, true);
       const pointers = new Map();
       function shift(a, b) {
         const p = point(a.x, a.y),
@@ -1133,6 +1145,7 @@
       svg.addEventListener(
         "wheel",
         (e) => {
+          if (!wheelMode) return;
           e.preventDefault();
           zoom(Math.exp(e.deltaY * 0.0015), e.clientX, e.clientY);
         },
